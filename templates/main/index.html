@@ -1,0 +1,48 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/css/app.css">
+</head>
+<body>
+
+<header>
+ my journal
+</header>
+<nav>
+    <ul>
+        <li>
+            <a href="/journal" </a>
+
+        </li>
+        <li>
+            <a href="/auth"></a>
+        </li>
+    </ul>
+</nav>
+<main>
+
+{% block code %}
+    {% if loggedin %}
+      <form>
+          <label for="title">
+              <input id="title" type="text" name="title">
+          </label>
+             <br>
+             <label for="description">
+                <input id="description" type="text" name="description">
+              </label>
+          <input type="text">
+      </form>
+    {% endif %}
+    {% for entry in entries %}
+    <div class="post">
+        <sub>{{entry[0]}}</sub>
+        <h1>{{entry[1]}}</h1>
+        <p>{{entry[2]}}</p>
+    </div>
+    {% endfor %}
+    {% endblock %}
+</main>
+
+<footer><address>afheisleycook</address></footer>
+</body>
+</html>
