@@ -1,0 +1,27 @@
+header {
+    background: grey;
+    color: whitesmoke;
+}
+footer {
+    background: grey;
+    color: whitesmoke;
+    height: max-content;
+}
+main {
+    background: aquamarine;
+    width: max-content;
+    height: max-content;
+}
+.post sub {
+    font-family: "Lucinda Grande", "Lucinda Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+}
+.post h1 {
+    align-content: space-around;
+    position: absolute;
+    left: 40px;
+    align-content: space-around;
+
+}
+.pody p {
+
+}
