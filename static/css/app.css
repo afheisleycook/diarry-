@@ -9,19 +9,44 @@ footer {
 }
 main {
     background: aquamarine;
-    width: max-content;
-    height: max-content;
 }
+
+.post {
+    width: max-content;
+    height:max-content;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 4px;
+    background: aqua;
+}
+
 .post sub {
     font-family: "Lucinda Grande", "Lucinda Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
 }
 .post h1 {
+    background-color: beige;
+    color: black;
     align-content: space-around;
-    position: absolute;
-    left: 40px;
+    position: relative;
+    top: 2px;
+    font-weight: bold;
+    font-size: 1.5em;
+    left:30px;
     align-content: space-around;
 
 }
-.pody p {
+.post p {
+      color: black;
+    align-content: space-around;
+    position: relative;
+    top: -3px;
+    left:40px;
+    align-content: space-around;
+    background-color: blueviolet;
+    color: azure;
+    border-radius: 4px;
+
 
 }

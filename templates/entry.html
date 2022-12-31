@@ -9,11 +9,10 @@
 </header>
 <nav>
     {% block code%}
-      {% if not session["username"]%}
+      {% if session["username"] == ""   %}
       hello guest
-    {% elif session["username"] %}
+    {% endif %}
      {{session["username"]}}
-     {% endif %}
     <ul>
         <li>
             <a href="/journal">home </a>
@@ -23,9 +22,7 @@
             <a href="/auth">auth</a>
         </li>
         <li>
-            <a href="/logout">logout</a>
-        </li>
-        <li>
+          <li>
             <form action="/journal/search" method="get">
             <input type="search" 
                 name="title" 
@@ -39,12 +36,11 @@
 </nav>
 
 <main>
-    {% for entry in entries %}
-<div class="post">
-    <h1>{{entry[1]}}</h1>
-    <p>{{entry[2]}}</p>
-</div>
-    {% endfor %}
+   {% if  session["user"] != "" %}
+   <form>
+     <input type="text" name="title">
+   </form>
+  {% endif%}
     {% endblock %}
 </main>
 
