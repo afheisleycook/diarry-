@@ -1,0 +1,49 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/static/css/app.css">
+</head>
+<body>
+
+<header>
+ my journal
+</header>
+<nav>
+    {% block code%}
+      {% if session["username"] == ""   %}
+      hello guest
+    {% endif %}
+     {{session["username"]}}
+    <ul>
+        <li>
+            <a href="/journal">home </a>
+
+        </li>
+        <li>
+            <a href="/auth">auth</a>
+        </li>
+        <li>
+          <li>
+            <form action="/journal/search" method="get">
+            <input type="search" 
+                name="title" 
+                placeholder="Search" 
+                value="Search"
+                   name="id"
+                   >
+        </li>
+    </ul>
+
+</nav>
+
+<main>
+   {% if  session["user"] != "" %}
+   <form>
+     <input type="text" name="title">
+   </form>
+  {% endif%}
+    {% endblock %}
+</main>
+
+<footer><address>afheisleycook</address></footer>
+</body>
+</html>
