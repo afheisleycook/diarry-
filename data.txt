@@ -1,0 +1,29 @@
+mysql> selet * from USER;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'selet * from USER' at line 1
+mysql> selet * from USERS;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'selet * from USERS' at line 1
+mysql> select * from USER;
++---------+--------------+---------------+
+| USER_ID | USER_NAME    | USER_PASSWORD |
++---------+--------------+---------------+
+|       1 | aheisleycook | A714708o      |
++---------+--------------+---------------+
+1 row in set (0.00 sec)
+
+mysql> select * from ENTRY;
++----------+-------------+------------------------------------+
+| ENTRY_ID | ENTRY_TITLE | ENTRY_DESC                         |
++----------+-------------+------------------------------------+
+|        1 | hello       | test                               |
+|        3 | asd         | asd                                |
+|        4 | assad       | asd                                |
+|        5 | adad        | asd                                |
+|        6 | hello       | hello ther                         |
+|        7 |             |                                    |
+|        8 | wsd         | hello                              |
+|        9 | sick        | i am still sick
+bowels feed wirld |
++----------+-------------+------------------------------------+
+8 rows in set (0.00 sec)
+
+mysql> exit;
