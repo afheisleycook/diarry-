@@ -47,7 +47,7 @@ def searchbyid():
         pass
     db = Connect(user="aheisleycook", password="A714708o", database="diary")
     conn = db.cursor()
-    conn.execute("select * from ENTRY WHERE ENTRY_TEXT='%s'",title)
+    conn.execute("select * from ENTRY WHERE ENTRY_TITLE LIKE=%s",title)
     entries = conn.fetchall()
     return render_template("index.html", entries=entries)
 @app.route("/login",methods=["post"])
