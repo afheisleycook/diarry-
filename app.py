@@ -1,12 +1,13 @@
 import os
 import random
-import sqlite3
-
+import secrets
 from flask import Flask, render_template, render_template_string,request,redirect,session
 from pymysql import Connect
 from flask import session
+from random import Random
 from pandas import read_table
 app = Flask(__name__,static_url_path="/static")
+random = Random()
 app.secret_key = os.urandom(12)
 app.config['SQLALCHEMY_DATABASE_URI'] ='mysql+pymysql://'
 @app.route("/post", methods=["POST"])
@@ -47,7 +48,7 @@ def searchbyid():
         pass
     db = Connect(user="aheisleycook", password="A714708o", database="diary")
     conn = db.cursor()
-    conn.execute("select * from ENTRY WHERE ENTRY_TEXT='%s'",title)
+    conn.execute("select * from ENTRY WHERE ENTRY_TITLE LIKE=%s",title)
     entries = conn.fetchall()
     return render_template("index.html", entries=entries)
 @app.route("/login",methods=["post"])
